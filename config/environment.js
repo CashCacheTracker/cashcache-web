@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    apiUrl: 'http://localhost:3000',
     modulePrefix: 'stashtrack',
     environment: environment,
     baseURL: '/',
@@ -16,7 +17,6 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      apiUrl: 'http://localhost:3000/',
     }
   };
 
