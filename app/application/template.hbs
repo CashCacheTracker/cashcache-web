@@ -1,0 +1,17 @@
+{{#mdl-nav
+  title='Fixed Drawer Example'
+  fixedDrawer=true
+  fixedHeader=true
+  mobileTitle='Fixed Drawer'
+  }}
+
+  {{mdl-nav-item name='Buttons' route='buttons' inHeader=false}}
+  {{mdl-nav-item name='Tabs'    route='tabs'    inDrawer=false}}
+  {{mdl-nav-item name='Nav'     route='navs'}}
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+      {{outlet}}
+    </div>
+  </div>
+{{/mdl-nav}}

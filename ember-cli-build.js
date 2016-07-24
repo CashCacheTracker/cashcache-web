@@ -1,10 +1,15 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var mergeTrees = require('broccoli-merge-trees');
+var pickFiles = require('broccoli-static-compiler');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    sassOptions: {
+      includePaths: ['bower_components/material-design-lite/src']
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -20,5 +25,17 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  var materialDesignIconfont = pickFiles('bower_components/material-design-icons/iconfont', {
+    srcDir: '/',
+    files: ['**/*.woff', '**/*.woff2', '**/*.eot', '**/*.ttf'],
+    destDir: '/fonts'
+  });
+
+  var materialDesignSvg = pickFiles('bower_components/material-design-lite/src/images', {
+    srcDir: '/',
+    files: ['**/*.svg'],
+    destDir: '/images'
+  });
+
+  return mergeTrees([app.toTree(), materialDesignIconfont, materialDesignSvg]);
 };
