@@ -1,6 +1,7 @@
 {
   "disableAnalytics": true,
   "liveReload": true,
+  "port": 8800,
   "usePods": true,
   "watcher": "polling"
 }
