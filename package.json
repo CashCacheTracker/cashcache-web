@@ -41,6 +41,7 @@
     "ember-composability": "0.3.7",
     "ember-data": "^2.6.0",
     "ember-export-application-global": "^1.0.5",
+    "ember-i18n": "4.2.2",
     "ember-load-initializers": "^0.5.1",
     "ember-material-lite": "0.2.5",
     "ember-new-computed": "1.0.3",
