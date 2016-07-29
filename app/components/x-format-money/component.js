@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 let klass = Ember.Component.extend({
   tagName: 'span',
-  classNames: ['currency'],
+  classNames: ['format-money'],
   classNameBindings: ['zero', 'positive', 'negative'],
 
   zero:     Ember.computed('value', function() { return this.get('value') === 0; }),

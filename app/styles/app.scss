@@ -3,3 +3,14 @@ $color-secondary: '255, 82, 82';
 
 @import 'material-icons';
 @import 'material-design-lite';
+
+.transaction-card {
+  h2 {
+    justify-content: space-between;
+    width: 100%;
+    * {
+      align-self: flex-end;
+      vertical-align: middle;
+    }
+  }
+}

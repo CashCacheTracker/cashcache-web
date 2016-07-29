@@ -25,7 +25,7 @@ module.exports = function(environment) {
     },
 
     moment: {
-      outputFormat: 'L',
+      outputFormat: 'D MMM Y',
     }
   };
 
