@@ -23,6 +23,10 @@ module.exports = function(environment) {
     i18n: {
       defaultLocale: 'en-US',
     },
+
+    moment: {
+      outputFormat: 'L',
+    }
   };
 
   if (environment === 'development') {

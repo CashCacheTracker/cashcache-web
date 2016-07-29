@@ -1,8 +1,10 @@
 <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">
-      {{transaction.value}}
-      {{transaction.is_split}}
-      {{transaction.date}}
+      <span>
+        {{x-format-money transaction.value}}
+        {{transaction.is_split}}
+        {{moment-format transaction.date}}
+      </span>
     </h2>
 </div>
 
