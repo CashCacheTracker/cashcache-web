@@ -10,7 +10,9 @@ export default Ember.Route.extend({
       this.transitionTo('transaction');
     },
     save: function() {
-      console.log('save');
+      this.currentModel.save().then(() => {
+        this.transitionTo('transaction');
+      });
     },
   },
 });
