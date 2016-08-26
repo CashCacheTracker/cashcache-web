@@ -1,0 +1,18 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--bottom x-mdl-cell--half">
+    {{mdl-textfield label='Value' value=transaction.value}}
+  </div>
+  <div class="mdl-cell mdl-cell--bottom x-mdl-cell--half">
+    {{mdl-textfield label='Date' value=transaction.date type='date'}}
+  </div>
+
+  <div class="mdl-cell x-mdl-cell--full">
+    {{mdl-textfield label='Location' value=transaction.location}}
+    {{mdl-textarea label='Notes' value=transaction.notes}}
+  </div>
+
+  <div class="x-mdl-button-bar">
+    {{mdl-button action='cancel' text='Cancel'}}
+    {{mdl-button action='save' text='Save' isRaised=true}}
+  </div>
+</div>

@@ -1,8 +1,13 @@
+// For material-design-lite
 $color-primary: '33, 150, 243';
 $color-secondary: '255, 82, 82';
 
+// External styles
 @import 'material-icons';
 @import 'material-design-lite';
+
+// App styles
+@import 'material-extras';
 
 .transaction-card {
   h2 {
@@ -13,4 +18,7 @@ $color-secondary: '255, 82, 82';
       vertical-align: middle;
     }
   }
+}
+
+.transaction-form {
 }

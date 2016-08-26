@@ -1,0 +1,17 @@
+.x-mdl-cell--full {
+  @extend .mdl-cell--4-col-phone;
+  @extend .mdl-cell--8-col-tablet;
+  @extend .mdl-cell--12-col-desktop;
+}
+
+.x-mdl-cell--half {
+  @extend .mdl-cell--2-col-phone;
+  @extend .mdl-cell--4-col-tablet;
+  @extend .mdl-cell--6-col-desktop;
+}
+
+.x-mdl-button-bar {
+  @extend .mdl-cell;
+  @extend .x-mdl-cell--full;
+  text-align: right;
+}
