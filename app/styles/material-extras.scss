@@ -15,3 +15,10 @@
   @extend .x-mdl-cell--full;
   text-align: right;
 }
+
+.x-mdl-button-link {
+  z-index: 10;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+}

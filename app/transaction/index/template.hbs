@@ -1,3 +1,7 @@
 {{#each model as |transaction|}}
   {{transaction-card transaction=transaction}}
 {{/each}}
+
+{{#link-to 'transaction.new' class='x-mdl-button-link'}}
+  {{mdl-button isFloating=true icon='add'}}
+{{/link-to}}
