@@ -1,3 +1,9 @@
+// Global MDL overrides
+.mdl-card {
+  width: auto;
+}
+
+// Opt-in MDL overrides
 .x-mdl-cell--full {
   @extend .mdl-cell--4-col-phone;
   @extend .mdl-cell--8-col-tablet;
