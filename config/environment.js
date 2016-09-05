@@ -8,6 +8,11 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
 
+    dates: {
+      diffYearFormat: 'MMM D Y',
+      sameYearFormat: 'MMM D',
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -23,10 +28,6 @@ module.exports = function(environment) {
     i18n: {
       defaultLocale: 'en-US',
     },
-
-    moment: {
-      outputFormat: 'D MMM Y',
-    }
   };
 
   if (environment === 'development') {
