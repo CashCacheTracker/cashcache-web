@@ -15,13 +15,17 @@ a {
 
 .transaction-card {
   margin-bottom: 1em;
-  h2 {
+  min-height: auto;
+  h1 {
     justify-content: space-between;
     width: 100%;
     * {
       align-self: flex-end;
       vertical-align: middle;
     }
+  }
+  .mdl-card__title {
+    padding-bottom: 0;
   }
 }
 

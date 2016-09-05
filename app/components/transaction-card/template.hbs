@@ -1,17 +1,19 @@
 <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">
-      <span>
-        {{x-format-money transaction.value}}
-        {{#if transaction.is_split}}
-          {{mdl-icon icon="people"}}
-        {{/if}}
-      </span>
-      {{date-format transaction.date}}
-    </h2>
+  <h1 class="mdl-card__title-text">
+    <span>
+      {{x-format-money transaction.value}}
+      {{#if transaction.is_split}}
+        {{mdl-icon icon="people"}}
+      {{/if}}
+    </span>
+    {{date-format transaction.date}}
+  </h1>
 </div>
 
-<div class="mdl-card__supporting-text">
-  {{transaction.description}}
+<div class="mdl-card__title">
+  <h2 class="mdl-card__title-text">
+    {{transaction.description}}
+  </h2>
 </div>
 
 <div class="mdl-card__supporting-text">
