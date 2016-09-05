@@ -1,6 +1,4 @@
-// For material-design-lite
-$color-primary: '33, 150, 243';
-$color-secondary: '255, 82, 82';
+@import 'variables';
 
 // External styles
 @import 'material-icons';
@@ -26,6 +24,9 @@ a {
   }
   .mdl-card__title {
     padding-bottom: 0;
+  }
+  .format-money.negative {
+    color: $color-money-income;
   }
 }
 
