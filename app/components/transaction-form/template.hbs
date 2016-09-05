@@ -1,7 +1,8 @@
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--bottom x-mdl-cell--half">
-    {{mdl-textfield label='Value' value=transaction.value}}
+    {{transaction-form-value transaction=transaction}}
   </div>
+
   <div class="mdl-cell mdl-cell--bottom x-mdl-cell--half">
     {{mdl-textfield label='Date' value=transaction.date type='date'}}
   </div>

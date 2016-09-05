@@ -27,3 +27,18 @@ a {
 
 .transaction-form {
 }
+
+.transaction-form-value {
+  .mdl-textfield {
+    width: calc(100% - 36px);
+  }
+  .mdl-textfield::before {
+    content: '$';
+    position: absolute;
+    bottom: 24px;
+    left: -14px;
+  }
+  .mdl-icon-toggle:not(.is-checked) .mdl-icon-toggle__label {
+    opacity: 0.3;
+  }
+}
