@@ -9,6 +9,10 @@ $color-secondary: '255, 82, 82';
 // App styles
 @import 'material-extras';
 
+a {
+  text-decoration: none;
+}
+
 .transaction-card {
   margin-bottom: 1em;
   h2 {

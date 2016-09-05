@@ -1,5 +1,7 @@
 {{#each model as |transaction|}}
-  {{transaction-card transaction=transaction}}
+  {{#link-to 'transaction.edit' transaction}}
+    {{transaction-card transaction=transaction}}
+  {{/link-to}}
 {{/each}}
 
 {{#link-to 'transaction.new' class='x-mdl-button-link'}}
