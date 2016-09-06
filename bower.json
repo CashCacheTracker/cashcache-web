@@ -6,6 +6,7 @@
     "ember-cli-test-loader": "0.2.2",
     "ember-qunit-notifications": "0.1.0",
     "material-design-icons": "~2.2.3",
-    "material-design-lite": "~1.0.4"
+    "material-design-lite": "~1.0.4",
+    "node-uuid": "1.4.1"
   }
 }
