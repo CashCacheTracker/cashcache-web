@@ -2,7 +2,19 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.get('store').createRecord('transaction');
+    let transaction = this.get('store').createRecord('transaction');
+    this._handleGeolocation(transaction);
+    return transaction;
+  },
+
+  _handleGeolocation(transaction) {
+    navigator.geolocation.getCurrentPosition(position => {
+      let coordinate = {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      };
+      transaction.set('coordinate', coordinate);
+    });
   },
 
   actions: {

@@ -1,0 +1,6 @@
+{{mdl-textfield label='Location' value=transaction.location}}
+{{#if transaction.hasCoordinate}}
+  {{mdl-icon icon='location_on'}}
+{{else}}
+  {{mdl-icon icon='location_off' class='location_off'}}
+{{/if}}

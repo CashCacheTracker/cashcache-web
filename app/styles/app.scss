@@ -6,6 +6,7 @@
 
 // App styles
 @import 'material-extras';
+@import '_mixins';
 
 a {
   text-decoration: none;
@@ -33,9 +34,19 @@ a {
 .transaction-form {
 }
 
+.transaction-form-location {
+  .mdl-textfield {
+    @extend .make-icon-room;
+  }
+
+  .location_off {
+    @extend .inactive-icon;
+  }
+}
+
 .transaction-form-value {
   .mdl-textfield {
-    width: calc(100% - 36px);
+    @extend .make-icon-room;
   }
   .mdl-textfield::before {
     content: '$';
@@ -44,6 +55,6 @@ a {
     left: -14px;
   }
   .mdl-icon-toggle:not(.is-checked) .mdl-icon-toggle__label {
-    opacity: 0.3;
+    @extend .inactive-icon;
   }
 }
