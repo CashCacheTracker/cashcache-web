@@ -7,5 +7,6 @@ export default Ember.Component.extend({
   actions: {
     cancel() { this.sendAction('cancel'); },
     save() { this.sendAction('save'); },
+    toggleCoordinateEnabled() { this.sendAction('toggleCoordinateEnabled'); },
   },
 });

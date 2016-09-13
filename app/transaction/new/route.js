@@ -13,7 +13,10 @@ export default Ember.Route.extend({
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
       };
-      transaction.set('coordinate', coordinate);
+
+      if (transaction.get('coordinateEnabled')) {
+        transaction.set('coordinate', coordinate);
+      }
     });
   },
 
@@ -25,6 +28,16 @@ export default Ember.Route.extend({
       this.currentModel.save().then(() => {
         this.transitionTo('transaction');
       });
+    },
+    toggleCoordinateEnabled: function() {
+      let transaction = this.currentModel;
+      if (transaction.get('coordinateEnabled')) {
+        transaction.set('coordinate', undefined);
+        transaction.set('coordinateEnabled', false);
+      } else {
+        transaction.set('coordinateEnabled', true);
+        this._handleGeolocation(transaction);
+      }
     },
   },
 });

@@ -1,6 +1,19 @@
 {{mdl-textfield label='Location' value=transaction.location}}
-{{#if transaction.hasCoordinate}}
-  {{mdl-icon icon='location_on'}}
+
+{{#if transaction.isNew}}
+  {{#if transaction.coordinateEnabled}}
+    {{#if transaction.hasCoordinate}}
+      {{mdl-button icon='gps_fixed' class='coordinate-set' action='toggleCoordinateEnabled'}}
+    {{else}}
+      {{mdl-button icon='gps_not_fixed' class='coordinate-pending' action='toggleCoordinateEnabled'}}
+    {{/if}}
+  {{else}}
+    {{mdl-button icon='gps_off' class='coordinate-disabled' action='toggleCoordinateEnabled'}}
+  {{/if}}
 {{else}}
-  {{mdl-icon icon='location_off' class='location_off'}}
+  {{#if transaction.hasCoordinate}}
+    {{mdl-button icon='gps_fixed' class='coordinate-set'}}
+  {{else}}
+    {{mdl-button icon='gps_off' class='coordinate-disabled'}}
+  {{/if}}
 {{/if}}

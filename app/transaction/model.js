@@ -15,6 +15,10 @@ export default DS.Model.extend({
   note: DS.attr('string'),
   value: DS.attr('number'),
 
+  // Non-serialized (local only)
+  coordinateEnabled: DS.attr('boolean', { defaultValue: true }),
+
+  // Computed
   hasCoordinate: Ember.computed('coordinate', function() {
     let coordinate = this.get('coordinate');
     return coordinate && coordinate.latitude && coordinate.longitude;

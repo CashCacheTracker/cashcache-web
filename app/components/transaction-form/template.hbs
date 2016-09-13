@@ -9,7 +9,7 @@
 
   <div class="mdl-cell x-mdl-cell--full">
     {{mdl-textfield label='Description' value=transaction.description}}
-    {{transaction-form-location transaction=transaction}}
+    {{transaction-form-location transaction=transaction toggleCoordinateEnabled='toggleCoordinateEnabled'}}
     {{mdl-textarea label='Notes' value=transaction.note}}
   </div>
 

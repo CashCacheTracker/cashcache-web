@@ -39,8 +39,13 @@ a {
     @extend .make-icon-room;
   }
 
-  .location_off {
+  .coordinate-pending {
+    @extend .unset-icon;
+  }
+
+  .coordinate-disabled {
     @extend .inactive-icon;
+    @extend .unset-icon;
   }
 }
 
