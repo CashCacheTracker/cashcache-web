@@ -30,6 +30,17 @@ module.exports = function(environment) {
     },
   };
 
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'index',
+    routeAfterAuthentication: 'transaction.index',
+    routeIfAlreadyAuthenticated: 'transaction.index'
+  };
+
+  ENV['auth0-ember-simple-auth'] = {
+    clientID: 'Usg01Uw9R7bxOwxyQjWVpYuqyinuFGCu',
+    domain: 'cashcache.auth0.com'
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

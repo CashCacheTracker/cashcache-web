@@ -11,6 +11,16 @@
   {{mdl-nav-item name='Nav'     route='navs'}}
   --}}
 
+  <header>
+    <a href="#" {{action 'login'}}>Login</a>
+    <a href="#" {{action 'logout'}}>Logout</a>
+    {{#if session.isAuthenticated}}
+      <!-- TODO this doesn't work at all -->
+      <h3>You are currently logged as: {{session.data.authenticated.profile.email}}</h3>
+      <a href="#" {{action 'logout'}}>Logout</a>
+    {{/if}}
+  </header>
+
   <div class="mdl-grid">
     <div class="mdl-cell x-mdl-cell--full">
       {{outlet}}
