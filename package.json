@@ -1,7 +1,7 @@
 {
-  "name": "stashtrack",
+  "name": "cashcache",
   "version": "0.0.0",
-  "description": "Small description for stashtrack goes here",
+  "description": "Small description for cashcache goes here",
   "private": true,
   "directories": {
     "doc": "doc",

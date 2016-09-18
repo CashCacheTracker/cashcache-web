@@ -3,7 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     apiUrl: 'http://localhost:8801',
-    modulePrefix: 'stashtrack',
+    modulePrefix: 'cashcache',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

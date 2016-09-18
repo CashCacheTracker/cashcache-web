@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import config from 'stashtrack/config/environment';
+import config from 'cashcache/config/environment';
 import moment from 'moment';
 
 let component = Ember.Component.extend({
