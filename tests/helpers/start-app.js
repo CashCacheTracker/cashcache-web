@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import Application from '../../app';
 import config from '../../config/environment';
+import { authenticateSession } from 'cashcache/tests/helpers/ember-simple-auth';
 
 export default function startApp(attrs) {
   let application;
@@ -14,5 +15,6 @@ export default function startApp(attrs) {
     application.injectTestHelpers();
   });
 
+  authenticateSession(application, {});
   return application;
 }

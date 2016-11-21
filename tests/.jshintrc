@@ -1,5 +1,9 @@
 {
   "predef": [
+    "faker",
+    "QUnit",
+    "server",
+
     "document",
     "window",
     "location",

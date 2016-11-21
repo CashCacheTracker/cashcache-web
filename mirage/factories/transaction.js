@@ -13,5 +13,5 @@ export default Factory.extend({
   is_split() { return faker.random.boolean(); },
   location() { return faker.company.companyName(); },
   note() { return faker.lorem.words(); },
-  value() { return faker.random.number() % 500; },
+  value() { return faker.random.number(200); },
 });
