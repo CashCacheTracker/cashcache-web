@@ -2,6 +2,7 @@ import Ember from 'ember';
 import Application from '../../app';
 import config from '../../config/environment';
 import { authenticateSession } from 'cashcache/tests/helpers/ember-simple-auth';
+import { stubSettings } from 'cashcache/services/geolocation';
 
 export default function startApp(attrs) {
   let application;
@@ -16,5 +17,6 @@ export default function startApp(attrs) {
   });
 
   authenticateSession(application, {});
+  stubSettings.position = { coords: { latitude: 0, longitude: 0 } };
   return application;
 }
