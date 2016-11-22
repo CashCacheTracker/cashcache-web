@@ -17,6 +17,11 @@ export default function startApp(attrs) {
   });
 
   authenticateSession(application, {});
-  stubSettings.position = { coords: { latitude: 0, longitude: 0 } };
+
+  // Unpredictable default
+  let latitude = faker.address.latitude();
+  let longitude = faker.address.longitude();
+  stubSettings.position = { coords: { latitude, longitude }};
+
   return application;
 }
