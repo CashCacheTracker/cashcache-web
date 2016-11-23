@@ -9,7 +9,7 @@ let component = Ember.Component.extend({
     return this.get('params')[0];
   }),
 
-  dateFormat: Ember.computed('params.[]', function() {
+  dateFormat: Ember.computed('date', function() {
     let date = this.get('date');
     let isSameYear = moment().isSame(date, 'year');
     return isSameYear ? config.dates.sameYearFormat : config.dates.diffYearFormat;

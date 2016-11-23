@@ -25,6 +25,10 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  if (app.env !== 'production') {
+    app.import('bower_components/ember/ember-template-compiler.js');
+  }
+
   var materialDesignIconfont = pickFiles('bower_components/material-design-icons/iconfont', {
     srcDir: '/',
     files: ['**/*.woff', '**/*.woff2', '**/*.eot', '**/*.ttf'],
