@@ -25,6 +25,9 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  //FIXME: This is an awful hack https://github.com/babel/ember-cli-babel/issues/40
+  app.import('vendor/babel-polyfill.js', { prepend: true });
+
   if (app.env !== 'production') {
     app.import('bower_components/ember/ember-template-compiler.js');
   }
