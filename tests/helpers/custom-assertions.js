@@ -1,4 +1,8 @@
 export default function patchCustomAssertions() {
+  QUnit.assert.defined = function(value, message) {
+    return QUnit.assert.notStrictEqual(value, undefined, message);
+  };
+
   QUnit.assert.selectorExists = function(selector, message) {
     return QUnit.assert.ok(find(selector).length > 0,  message);
   };
