@@ -13,6 +13,18 @@ export default function patchCustomAssertions() {
     return QUnit.assert.notStrictEqual(value, undefined, message);
   };
 
+  QUnit.assert.formChecked = function(selector, message) {
+    return QUnit.assert.ok(select(selector).is(':checked'), message);
+  };
+
+  QUnit.assert.formNotChecked = function(selector, message) {
+    return QUnit.assert.ok(select(selector).is(':not(:checked)'), message);
+  };
+
+  QUnit.assert.formValue = function(selector, value, message) {
+    return QUnit.assert.equal(select(selector).val(), value, message);
+  };
+
   QUnit.assert.selectorExists = function(selector, message) {
     return QUnit.assert.ok(select(selector).length > 0,  message);
   };
