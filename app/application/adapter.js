@@ -6,13 +6,13 @@ export default JSONAPIAdapter.extend({
   session: Ember.inject.service(),
 
   headers: Ember.computed('session.data.authenticated.jwt', function() {
-    let jwt = this.get('session.data.authenticated.jwt');
+    const jwt = this.get('session.data.authenticated.jwt');
     return {
       'Authorization': `Bearer ${jwt}`,
     };
   }),
   host: config.apiUrl,
-  pathForType: function(type) {
+  pathForType(type) {
     return Ember.String.pluralize(Ember.String.underscore(type));
-  }
+  },
 });
