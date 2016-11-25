@@ -3,7 +3,7 @@
     <span>
       {{x-format-money transaction.value}}
       {{#if transaction.is_split}}
-        {{mdl-icon icon="people"}}
+        {{mdl-icon class="is-split" icon="people"}}
       {{/if}}
     </span>
     {{date-format transaction.date}}
@@ -11,11 +11,11 @@
 </div>
 
 <div class="mdl-card__title">
-  <h2 class="mdl-card__title-text">
+  <h2 class="mdl-card__title-text description">
     {{transaction.description}}
   </h2>
 </div>
 
-<div class="mdl-card__supporting-text">
+<div class="mdl-card__supporting-text location">
   {{transaction.location}}
 </div>
