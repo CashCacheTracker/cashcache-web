@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import { moduleForComponent as superModuleForComponent } from 'ember-qunit';
 export { test } from 'ember-qunit';
+import { startMirage } from 'cashcache/initializers/ember-cli-mirage';
 
 const nop = function() {};
 
@@ -34,6 +35,12 @@ function localBeforeEach(subjectName) {
 
     this.render(Ember.HTMLBars.compile(content));
   };
+
+  this.server = startMirage();
+}
+
+function localAfterEach() {
+  this.server.shutdown();
 }
 
 // Sugar to declare a component integration test in a DRY way and add xRender method
@@ -42,13 +49,18 @@ export function moduleForComponent(subjectName, callbacks) {
   let realCallbacks = Object.assign({}, callbacks || {});
   realCallbacks.integration = true;
 
-  // Save any beforeEach
+  // Save any callbacks
   let superBeforeEach = realCallbacks.beforeEach || nop;
+  let superAfterEach = realCallbacks.afterEach || nop;
 
-  // Run our event and then the original
+  // Run our events and then the originals
   realCallbacks.beforeEach = function() {
     localBeforeEach.call(this, subjectName);
     return superBeforeEach(...arguments);
+  };
+  realCallbacks.afterEach = function() {
+    localAfterEach.call(this);
+    return superAfterEach(...arguments);
   };
 
   const description = `Integration | Component | ${subjectName}`;
