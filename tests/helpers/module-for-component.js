@@ -6,6 +6,17 @@ import { startMirage } from 'cashcache/initializers/ember-cli-mirage';
 const nop = function() {};
 
 function localBeforeEach(subjectName) {
+  this.inject.service('store');
+  this.newModel = function(type, attributes) {
+    let store = this.get('store');
+    let mirageModel = server.create(type, attributes || {});
+    return Ember.run(() => store.createRecord(type, mirageModel.attrs));
+  };
+  this.savedModel = function() {
+    let model = this.newModel(...arguments);
+    return Ember.run(() => model.save());
+  };
+
   // Sugar to render a component without so much repetition/importing/etc:
   // xRender('foo=bar comp=arg action=etc', {
   //   inside: 'optional content inside component block',
