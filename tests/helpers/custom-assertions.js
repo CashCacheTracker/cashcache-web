@@ -20,4 +20,10 @@ export default function patchCustomAssertions() {
   QUnit.assert.selectorResultCount = function(selector, count, message) {
     return QUnit.assert.equal(select(selector).length, count, message);
   };
+
+  QUnit.assert.selectorSubstring = function(selector, needle, message) {
+    needle = needle.toString().trim();
+    let text = (select(selector).text() || '').trim();
+    return QUnit.assert.ok(text.includes(needle), message);
+  };
 }
