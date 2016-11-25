@@ -10,7 +10,7 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember exam --split=4 --parallel --random --options"
+    "test": "ember exam --split=4 --parallel --random"
   },
   "repository": "",
   "engines": {
