@@ -5,6 +5,8 @@ const app = {
 
 const action = {
   cancel: 'Cancel',
+  confirm: 'Confirm',
+  delete: 'Delete',
   save: 'Save',
 };
 

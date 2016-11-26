@@ -10,6 +10,7 @@ test('it loads', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), `/transaction/${transaction.id}`, 'URL is correct');
+    assert.selectorExists('.delete-transaction-button', 'delete button exists');
     assert.selectorExists('.cancel-transaction-button', 'cancel transaction button exists');
     assert.selectorExists('.save-transaction-button', 'save transaction button exists');
   });
@@ -43,5 +44,22 @@ test('it does not update transaction on cancel', function(assert) {
     transaction.reload();
     assert.equal(transaction.value, beginValue, 'value was not updated');
     assert.equal(currentURL(), '/transaction', 'URL is correct');
+  });
+});
+
+test('it deletes transaction with two clicks', function(assert) {
+  let transaction = server.create('transaction');
+
+  visit(`/transaction/${transaction.id}`);
+  click('.delete-transaction-button button');
+
+  andThen(function() {
+    assert.equal(server.db.transactions.length, 1, 'record exists after one click');
+    assert.equal(currentURL(), `/transaction/${transaction.id}`, 'still on edit route after one click');
+    click('.delete-transaction-button button');
+    andThen(function() {
+      assert.equal(server.db.transactions.length, 0, 'record deleted after two clicks');
+      assert.equal(currentURL(), '/transaction', 'on index route after two clicks');
+    });
   });
 });

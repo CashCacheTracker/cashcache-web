@@ -9,6 +9,7 @@ test('it loads', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/transaction/new', 'URL is correct');
+    assert.selectorResultCount('.delete-transaction-button', 0, 'delete button does not exist');
     assert.selectorExists('.cancel-transaction-button', 'cancel transaction button exists');
     assert.selectorExists('.save-transaction-button', 'save transaction button exists');
   });

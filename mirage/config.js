@@ -11,4 +11,5 @@ export default function() {
   this.get('/transactions/:id');
   this.patch('/transactions/:id');
   this.post('/transactions');
+  this.del('/transactions/:id');
 }
