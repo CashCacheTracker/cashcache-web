@@ -4,17 +4,17 @@
   </div>
 
   <div class="mdl-cell mdl-cell--bottom x-mdl-cell--half">
-    {{mdl-textfield class='date' label='Date' value=transaction.date type='date'}}
+    {{mdl-textfield class='date' label=(t 'transaction.date') value=transaction.date type='date'}}
   </div>
 
   <div class="mdl-cell x-mdl-cell--full">
-    {{mdl-textfield class='description' label='Description' value=transaction.description}}
+    {{mdl-textfield class='description' label=(t 'transaction.description') value=transaction.description}}
     {{transaction-form-location transaction=transaction toggleCoordinateEnabled='toggleCoordinateEnabled'}}
-    {{mdl-textarea class='note' label='Notes' value=transaction.note}}
+    {{mdl-textarea class='note' label=(t 'transaction.note') value=transaction.note}}
   </div>
 
   <div class="x-mdl-button-bar">
-    {{mdl-button class='cancel-transaction-button' action='cancel' text='Cancel'}}
-    {{mdl-button class='save-transaction-button' action='save' text='Save' isRaised=true}}
+    {{mdl-button class='cancel-transaction-button' action='cancel' text=(t 'action.cancel')}}
+    {{mdl-button class='save-transaction-button' action='save' text=(t 'action.save') isRaised=true}}
   </div>
 </div>

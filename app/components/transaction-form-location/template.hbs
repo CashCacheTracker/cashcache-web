@@ -1,4 +1,4 @@
-{{mdl-textfield class='location' label='Location' value=transaction.location}}
+{{mdl-textfield class='location' label=(t 'transaction.location') value=transaction.location}}
 
 {{#if transaction.isNew}}
   {{#if transaction.coordinateEnabled}}
